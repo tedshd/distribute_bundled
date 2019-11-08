@@ -1,0 +1,14 @@
+{
+  "name": "distribute_bundled",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Tedshd",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "webpack": "^4.41.2",
+    "webpack-stream": "^5.2.1"
+  }
+}
