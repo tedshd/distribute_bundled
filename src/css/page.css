@@ -1,0 +1,5 @@
+@import './_common/_base.css';
+
+.page {
+  background: pink;
+}
