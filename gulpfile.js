@@ -23,10 +23,10 @@ const gulp = require('gulp'),
   jsDir = './src/js/',
   build = './dist/';
 
-gulp.task('default', function(cb) {
+gulp.task('default', function (cb) {
   var options = {};
   // watch css
-  watch(cssPath + '*.css', options, function(e) {
+  watch(cssPath + '*.css', options, function (e) {
     // console.log('e:'+JSON.stringify(e));
     // console.log(new Date() + ' -- ' + e.history[0].replace(e.base, ''));
     var path = e.history[0].replace(e.cwd, '');
@@ -47,7 +47,6 @@ gulp.task('default', function(cb) {
         execSync('find . -name "' + name + '*" -delete');
       }
       gulp.src(files2Build)
-      //   .pipe(concat(ts + css, { newLine: '\n' }))
         .pipe(cssimport())
         .pipe(postcss(processors))
         .pipe(cssnano())
@@ -59,7 +58,7 @@ gulp.task('default', function(cb) {
 
   });
   // watch js
-  watch(jsPath + '*.js', options, function(e) {
+  watch(jsPath + '*.js', options, function (e) {
     // console.log('e:'+JSON.stringify(e));
     // var filePath = e.history[0].replace(e.base, '');
     var path = e.history[0].replace(e.cwd, '');
@@ -69,36 +68,6 @@ gulp.task('default', function(cb) {
     var ts = new Date().getTime();
 
     (async () => {
-
-      // if (path.search(common) !== -1 ||
-      //   path.search(lib) !== -1
-      // ) {
-      //   function checkBuildingFiles() {
-      //     return new Promise((resolve, rejection) => {
-
-      //       fs.readdir(jsDir, (err, files) => {
-      //         let tmp = [];
-      //         files.forEach((file) => {
-      //           if (file.search('.js') !== -1) {
-      //             file = jsDir + file;
-      //             tmp.push(file);
-      //           }
-      //         });
-      //         resolve(tmp);
-      //       });
-
-      //     });
-      //   }
-      //   files2Build = await checkBuildingFiles();
-      // } else {
-      //   files2Build.push('.' + path);
-      // }
-
-      // buildFiles(path, '.js').then((res) => {
-      //   console.log(res);
-      //   return res;
-      // });
-
       var files2Build = await buildFiles(path, jsDir, '.js');
 
       console.log(files2Build);
@@ -127,7 +96,7 @@ gulp.task('default', function(cb) {
   });
 });
 
-function checkBuildingFiles(dir, fileType) {
+function checkBuildingFiles (dir, fileType) {
   return new Promise((resolve, rejection) => {
 
     fs.readdir(dir, (err, files) => {
@@ -144,7 +113,7 @@ function checkBuildingFiles(dir, fileType) {
   });
 }
 
-async function buildFiles(path, dir, fileType) {
+async function buildFiles (path, dir, fileType) {
   var arr = [];
   if (path.search(common) !== -1 ||
     path.search(lib) !== -1

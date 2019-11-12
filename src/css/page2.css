@@ -1,3 +1,9 @@
+@import './_common/_var.css';
+
 .page2 {
   background: gray.
+}
+
+.theme {
+  background: var(--base-bg);
 }
