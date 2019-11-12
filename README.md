@@ -5,9 +5,9 @@ Auto distribute bundled js for used page, not bundle together
 
 * Support ECMAScript import
 * Support use CSS `@import` bundle
-* Support CSSL4
+* Support CSSL4 `var`, `apply`
 
-## Use
+## Used tool
 
 * gulp
 * webpack
