@@ -48,6 +48,8 @@ You can set up build path in `gulpfile.js`
 
 css files are same as js files.
 
+![](distribute_bundled.png)
+
 ## Flow
 
 entry
